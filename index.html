@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Savic Havoc</title>
     <link rel="icon" type="image/x-icon" href="images/mini.jpg">
     <style lang="CSS">
@@ -25,8 +25,9 @@
         font-size: 20px;
         color: purple;
         background-color: lightblue;
-        padding: 5px;
+        padding: 8px;
         margin-top: 0px;
+        margin-bottom: 0px;
       }
       .quote {
         font-family: arial;
@@ -34,10 +35,17 @@
         font-size: 20px;
       }
       .content {
-        max-width: 750px;
+        max-width: 860px;
         margin: auto;
         background-color: khaki;
         border: 2px solid purple;
+      }
+      .intro-quote {
+        background-color: beige;
+        border: 2px dashed blueviolet;
+        margin: 12px;
+        padding: 10px;
+        text-align: center;
       }
       .white {
         color: white
@@ -53,7 +61,6 @@
         font-family: arial;
         padding: 10px;
       }
-
       #survey {
         cursor: grab;
         color:rgb(192, 114, 114);
@@ -79,6 +86,53 @@
         color: purple;
         text-decoration: none;
       }
+      .gif-row {
+        align-items: center;
+        background-color: beige;
+        border-top: 2px dotted purple;
+        border-bottom: 2px dotted purple;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 18px 14px;
+      }
+      .gif-row a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        min-width: 0;
+      }
+      .gif-row img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        vertical-align: middle;
+      }
+      .main-panels {
+        display: flex;
+        gap: 12px;
+        padding: 14px;
+      }
+      .panel {
+        background-color: lightblue;
+        border: 2px outset purple;
+        flex: 1;
+        padding: 10px;
+      }
+      .panel h3, .panel p {
+        margin-top: 0;
+      }
+      .fun-links {
+        text-align: center;
+      }
+      .fun-links a {
+        display: block;
+        margin: 12px 0;
+      }
+      @media (max-width: 650px) {
+        .site-nav, .gif-row, .main-panels {
+          flex-direction: column;
+        }
+      }
     </style>
   </head>
   <body>
@@ -86,60 +140,59 @@
     <div class="content">
       <h1 class="title" align="center"><span class="welcome">Welcome to Savic Havoc!</span><br>
         Where psychopaths and coffee drunkards alike can relax, tell tall tales, and experience the Dew.</h1>
-      <h2>"Huh, seems like this website could use a few pointers. 
-        I guess the creators didn't take my computer programming class!" 
+
+      <h2 class="intro-quote">"Huh, seems like this website could use a few pointers.
+        I guess the creators didn't take my computer programming class!"
         <span class="quote">- SavicSites Inc. founder, B.S.S.</span></h2>
-        
+
       <div class="site-nav">
         <button><a href="index.html">Home</a></button>
         <button><a href="bs_memes.html">BS Memes</a></button>
         <button><a href="grapefarm.html">GrapeFarm</a></button>
         <button><a href="ms_wangen.html">Meet the Wangenator!</a></button>
       </div>
-      <br><br>
 
-      <a href="https://www.mountaindew.com/">
-        <img
-          src="images/savic_mtndew.gif"
-          alt="Best drink in the world."
-          />
-      </a>
-      <a href="grapefarm.html">
-        <img
-          src="images/programmer.gif"
-          alt="I am the grapest programmer!"
-          />
-      </a>
-      <a href="tms_business.mhtml">
-        <img
-          src="images/2004business.gif"
-          alt="Link to TMS Business page"
-          />
-      </a>
-      <br>
-      <br>
-      <b><p>Why Trust Savic Shares?</p></b>
-      <p>You know...</p>
-      <ul>
-        <li>We are always profitable</li>
-        <li>The market is <u>always</u> in our favor!</li>
-        <li>We've been in business since <span class='white'>1995!</span></li>
-      </ul>
-      <br>
-      <br>
-      <br>
-      <h3>Take a <span class='super-savic'>Super-Savic</span> Survey Here!</h3>
-      <a href='survey.html'><button id='survey' class='survey'>Survey!</button></a>
-      <br>
-      <br>
-      <a href='numberGuesser.html'>Savic's Number Guesser Game!</a>
-      <br>
-      <br>
-      <a href='pong.html'><p class='super-savic'>Savic's PONG Game!</p></a>
-  
-  
-  
-      <footer align="center">Copyright ©1995-2023, SavicSites Inc.</footer>
+      <div class="gif-row">
+        <a href="https://www.mountaindew.com/">
+          <img
+            src="images/savic_mtndew.gif"
+            alt="Best drink in the world."
+            />
+        </a>
+        <a href="grapefarm.html">
+          <img
+            src="images/programmer.gif"
+            alt="I am the grapest programmer!"
+            />
+        </a>
+        <a href="tms_business.mhtml">
+          <img
+            src="images/2004business.gif"
+            alt="Link to TMS Business page"
+            />
+        </a>
+      </div>
+
+      <div class="main-panels">
+        <div class="panel">
+          <b><p>Why Trust Savic Shares?</p></b>
+          <p>You know...</p>
+          <ul>
+            <li>We are always profitable</li>
+            <li>The market is <u>always</u> in our favor!</li>
+            <li>We've been in business since <span class="white">1995!</span></li>
+          </ul>
+        </div>
+
+        <div class="panel fun-links">
+          <h3>Take a <span class="super-savic">Super-Savic</span> Survey Here!</h3>
+          <a href="survey.html"><button id="survey" class="survey">Survey!</button></a>
+          <a href="numberGuesser.html">Savic's Number Guesser Game!</a>
+          <a href="pong.html"><span class="super-savic">Savic's PONG Game!</span></a>
+        </div>
+      </div>
+
+      <footer align="center">Copyright &copy;1995-2023, SavicSites Inc.</footer>
     </div>
   </body>
 </html>
