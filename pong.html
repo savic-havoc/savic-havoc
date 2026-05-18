@@ -56,7 +56,7 @@
     "images/IMG_4820.JPG",
     "images/IMG_5985.jpeg",
     "images/IMG_5228.jpeg",
-    "IMG_4713.GIF",
+    "images/IMG_4713.GIF",
     "images/B.Piano.png",
     "images/IMG_4990.JPG",
     "images/IMG_5771.JPG",
@@ -76,7 +76,7 @@
     "images/IMG_3503.jpeg",
     "images/IMG_3834.jpeg",
     "images/IMG_6068.jpeg",
-    "windows_xp.gif",
+    "images/windows_xp.gif",
     "images/IMG_5187.JPG",
     "images/IMG_4791.JPG",
     
@@ -111,8 +111,9 @@
     popup.className = "popup";
 
     const image = new Image();
-    image.src = imageURL;
     image.className = "popup-image";
+    image.decoding = "async";
+    image.src = imageURL;
 
     popup.appendChild(image);
     document.body.appendChild(popup);
@@ -141,20 +142,6 @@
     speed: 17,
   };
 
-  function showMessage(message) {
-    clearActivePopup();
-
-    const popup = document.createElement("div");
-    popup.className = "popup";
-    popup.textContent = message;
-
-    document.body.appendChild(popup);
-    activePopup = popup;
-
-    activePopupTimer = setTimeout(() => {
-      clearActivePopup();
-    }, 2000); // Popup will disappear after 2 seconds
-  }
   function drawBall() {
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
@@ -177,17 +164,6 @@
     // Update ball position
     ball.x += ball.dx;
     ball.y += ball.dy;
-
-    // Ball goes out of bounds at the bottom
-    //phrases = ["Haha, Pokey!", "Your Name Isn't Chris, Or Is It?", "God Is My Middle Name!", "You're Just As Good As Ms. Wangen!",
-  //"Wow! Just As Good As My Pool Store!", "CTA'S WERE DUE YESTERDAY!!!", "Huh?", "Too Slow? Is This Misty D.?", "Even I Have Better Reflexes!",
-  //"Fail, Fail, Fail! Just Like Your Grades!", "Ehm, Why Am I Here!?? -Misty D.", "Hehehe! The Ransom!", "Don't Even Call My Initials On That!!!"]
-      phrases = ['Big Honking Mistake!!! -Karl', 'Do You Need Super Savic?? -B. Savic', 'Haaaah! Orange Skins For You! -J. Schatz', 'HAHAHA! You Finally Died! -K. Meyer',
-    'I Ordered Chicken Wings An Hour Ago!! -J. Wetherall', ':) -K. Winters', 'AAAH! You Missed That Like How I Miss Birds!! -T. Hillmann', 
-    'Fay-leez Coop-lay-an-ohs! Maybe You Should Have Went Left! -S. Wright', 'You Failed Just Like My Banana Cream Pie Recipe! -M. Payne', 
-    'I Bet You Want That Sugar Honey Iced Tea!!! -C. Maxwell', 'Ha-ha-ha! Bruja! -K. Feudner', 'You Damn Democrat! -Tia Esme', 'Ahora, Vas A Recibir El Cuchillo!!! -Rosa',
-    'Hoo, hoo! You Sure As Hell Dont Know It! -B. Wangen']
-
 
     if (ball.y + ball.radius > canvas.height) {
       const randomImageURL = getRandomImage();
