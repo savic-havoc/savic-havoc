@@ -40,49 +40,45 @@
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 <script>
  const images = [
-    "23361F6B-68F8-4074-9DE9-4552BC804A9A_1_105_c.jpeg",
-    "351F95A5-CF01-4CA8-B9A3-F1EF35C18CA8_1_105_c.jpeg",
-    "283EAC6D-C475-4364-880B-2701DDFF0B78_1_105_c.jpeg",
-    "7A8BE304-9ABA-4522-84C7-B875F32BE003_1_105_c.jpeg",
-    "0F93BB0F-73AC-48B2-A6AF-8D530D197FB4_1_105_c.jpeg",
-    "IMG_6077.jpeg",
-    "IMG_5487.jpeg",
-    "IMG_6073.jpeg",
-    "IMG_6070.jpeg",
-    "IMG_5383.jpeg",
-    "Screenshot_2023-02-16_7.58.01_AM.png",
-    "IMG_5017.jpeg",
-    "IMG_5710.jpeg",
-    "IMG_5464.jpeg",
-    "IMG_6074.jpeg",
-    "IMG_4820.JPG",
-    "IMG_5985.jpeg",
-    "IMG_5228.jpeg",
+    "images/283EAC6D-C475-4364-880B-2701DDFF0B78_1_105_c.jpeg",
+    "images/7A8BE304-9ABA-4522-84C7-B875F32BE003_1_105_c.jpeg",
+    "images/0F93BB0F-73AC-48B2-A6AF-8D530D197FB4_1_105_c.jpeg",
+    "images/IMG_6077.jpeg",
+    "images/IMG_5487.jpeg",
+    "images/IMG_6073.jpeg",
+    "images/IMG_6070.jpeg",
+    "images/IMG_5383.jpeg",
+    "images/Screenshot_2023-02-16_7.58.01_AM.png",
+    "images/IMG_5017.jpeg",
+    "images/IMG_5710.jpeg",
+    "images/IMG_5464.jpeg",
+    "images/IMG_6074.jpeg",
+    "images/IMG_4820.JPG",
+    "images/IMG_5985.jpeg",
+    "images/IMG_5228.jpeg",
     "IMG_4713.GIF",
-    "B.Piano.png",
-    "IMG_4990.JPG",
-    "IMG_5771.JPG",
-    "IMG_4821.JPG",
-    "IMG_4561.jpeg",
-    "IMG_4717.jpeg",
-    "IMG_4716.jpeg",
-    "image.png",
-    "IMG_4695.JPG",
-    "IMG_4697.JPG",
-    "IMG_4635.jpeg",
-    "IMG_4415.jpeg",
-    "IMG_1102.jpeg",
-    "IMG_4340.jpeg",
-    "IMG_3835.JPG",
-    "IMG_3909.jpeg",
-    "IMG_3503.jpeg",
-    "IMG_4150.PNG",
-    "IMG_3834.jpeg",
-    "0f434ad7-b5e4-42e1-a201-6ad6583984ff.mp4_1668316371668_12.mp4",
-    "IMG_6068.jpeg",
+    "images/B.Piano.png",
+    "images/IMG_4990.JPG",
+    "images/IMG_5771.JPG",
+    "images/IMG_4821.JPG",
+    "images/IMG_4561.jpeg",
+    "images/IMG_4717.jpeg",
+    "images/IMG_4716.jpeg",
+    "images/image.png",
+    "images/IMG_4695.JPG",
+    "images/IMG_4697.JPG",
+    "images/IMG_4635.jpeg",
+    "images/IMG_4415.jpeg",
+    "images/IMG_1102.jpeg",
+    "images/IMG_4340.jpeg",
+    "images/IMG_3835.JPG",
+    "images/IMG_3909.jpeg",
+    "images/IMG_3503.jpeg",
+    "images/IMG_3834.jpeg",
+    "images/IMG_6068.jpeg",
     "windows_xp.gif",
-    "IMG_5187.JPG",
-    "IMG_4791.JPG",
+    "images/IMG_5187.JPG",
+    "images/IMG_4791.JPG",
     
     // Add more image URLs here
 
@@ -93,7 +89,24 @@
     return images[randomIndex];
   }
 
+  let activePopup = null;
+  let activePopupTimer = null;
+
+  function clearActivePopup() {
+    if (activePopupTimer) {
+      clearTimeout(activePopupTimer);
+      activePopupTimer = null;
+    }
+
+    if (activePopup) {
+      activePopup.remove();
+      activePopup = null;
+    }
+  }
+
   function showMessageWithImage(imageURL) {
+    clearActivePopup();
+
     const popup = document.createElement("div");
     popup.className = "popup";
 
@@ -102,11 +115,11 @@
     image.className = "popup-image";
 
     popup.appendChild(image);
-
     document.body.appendChild(popup);
+    activePopup = popup;
 
-    setTimeout(() => {
-      document.body.removeChild(popup);
+    activePopupTimer = setTimeout(() => {
+      clearActivePopup();
     }, 2000); // Popup will disappear after 2 seconds
   }
   const canvas = document.getElementById("gameCanvas");
@@ -129,14 +142,17 @@
   };
 
   function showMessage(message) {
+    clearActivePopup();
+
     const popup = document.createElement("div");
     popup.className = "popup";
     popup.textContent = message;
 
     document.body.appendChild(popup);
+    activePopup = popup;
 
-    setTimeout(() => {
-      document.body.removeChild(popup);
+    activePopupTimer = setTimeout(() => {
+      clearActivePopup();
     }, 2000); // Popup will disappear after 2 seconds
   }
   function drawBall() {
