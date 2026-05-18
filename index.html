@@ -59,13 +59,45 @@
         color:rgb(192, 114, 114);
         background-color:beige;
       }
+      .site-nav {
+        background-color: lightblue;
+        border-top: 3px double purple;
+        border-bottom: 3px double purple;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .site-nav button {
+        background-color: beige;
+        border: 2px outset purple;
+        font-weight: bold;
+      }
+      .site-nav a {
+        color: purple;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
     <script src="jscript.js"></script>
     <div class="content">
-      <h1 class="title" align="center"><span class="welcome">Welcome to Savic Havoc!</span><br>Where psychopaths and coffee drunkards alike can relax, tell tall tales, and experience the Dew.</h1>
-      <h2>"Huh, seems like this website could use a few pointers. I guess the creators didn't take my computer programming class!" <span class="quote">- SavicSites Inc. founder, B.S.S.</span></h2>
+      <h1 class="title" align="center"><span class="welcome">Welcome to Savic Havoc!</span><br>
+        Where psychopaths and coffee drunkards alike can relax, tell tall tales, and experience the Dew.</h1>
+      <h2>"Huh, seems like this website could use a few pointers. 
+        I guess the creators didn't take my computer programming class!" 
+        <span class="quote">- SavicSites Inc. founder, B.S.S.</span></h2>
+        
+      <div class="site-nav">
+        <button><a href="index.html">Home</a></button>
+        <button><a href="bs_memes.html">BS Memes</a></button>
+        <button><a href="grapefarm.html">GrapeFarm</a></button>
+        <button><a href="ms_wangen.html">Meet the Wangenator!</a></button>
+      </div>
+      <br><br>
+
       <a href="https://www.mountaindew.com/">
         <img
           src="images/savic_mtndew.gif"

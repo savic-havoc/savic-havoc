@@ -18,14 +18,34 @@
         color: purple;
         text-shadow: 1px 1px brown;
       }
+      .site-nav {
+        background-color: khaki;
+        border-top: 3px double purple;
+        border-bottom: 3px double purple;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+      }
+      .site-nav button {
+        background-color: lightblue;
+        border: 2px outset purple;
+        font-weight: bold;
+      }
+      .site-nav a {
+        color: purple;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
     <div class="content">
       <h1 class="title">Some real B.S. memes</h1>
-      <button>
-        <a href="grapefarm.html">GrapeFarm</a>
-      </button>
+      <div class="site-nav">
+        <button><a href="index.html">Home</a></button>
+        <button><a href="grapefarm.html">GrapeFarm</a></button>
+        <button><a href="ms_wangen.html">Wangenator</a></button>
+      </div>
       <p>Play Below For Some Tunes :)</p>
       <br>
       <audio controls="controls">

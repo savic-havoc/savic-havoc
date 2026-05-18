@@ -35,15 +35,36 @@
         color: blueviolet;
         font-family: tango;
       }
+      .site-nav {
+        background-color: khaki;
+        border-top: 3px double purple;
+        border-bottom: 3px double purple;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+      }
+      .site-nav button {
+        background-color: lightblue;
+        border: 2px outset purple;
+        font-weight: bold;
+      }
+      .site-nav a {
+        color: purple;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
     <div class="content">
       <h1 class="title">Welcome to the GrapeFarm!</h1>
       <h2 class="subhead">No farms. No grapes. What a mislead!</h2>
-      <button>
-        <a href="index.html">Index</a>
-      </button>
+      <div class="site-nav">
+        <button><a href="index.html">Home</a></button>
+        <button><a href="grapefarm.html">GrapeFarm</a></button>
+        <button><a href="ms_wangen.html">Wangenator</a></button>
+      </div>
+      <br>
       <table>
         <tr>
           <td colspan="6" align="center">Computer Apps CTA Scores 2021-22 using <span class="savigrader">SaviGrader 2000</span></td>
