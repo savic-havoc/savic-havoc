@@ -34,16 +34,21 @@
     <h1>Savic's Number Guesser</h1>
     <p>Try to guess the randomly generated number between 1 and 100.</p>
     <input type="number" id="guess" placeholder="Enter your guess">
-    <button onclick="checkGuess()">Check Guess</button>
+    <button id="guessButton" onclick="checkGuess()">Check Guess</button>
     <p id="message"></p>
 
     <script>
         alert("BOO! GOT YA POKEY!")
         // Generate a random number between 1 and 100
-        const targetNumber = Math.floor(Math.random() * 100) + 1;
+        let targetNumber = Math.floor(Math.random() * 100) + 1;
         let numberOfGuesses = 0;
+        let gameOver = false;
 
         function checkGuess() {
+            if (gameOver) {
+                return;
+            }
+
             const guess = parseInt(document.getElementById("guess").value);
 
             if (isNaN(guess) || guess < 1 || guess > 100) {
@@ -54,11 +59,42 @@
             numberOfGuesses++;
 
             if (guess === targetNumber) {
-                setMessage(`Geez, pokey! You guessed the number ${targetNumber} in ${numberOfGuesses} guesses.`);
+                if (targetNumber === 88) {
+                    setMessage(`Uhhhh, how do you know about 1988? That was the correct guess! You win, pokey!
+                    You guessed the number ${targetNumber} in ${numberOfGuesses} guesses.`);
+                } else {
+                    setMessage(`Geez, pokey! You guessed the number ${targetNumber} in ${numberOfGuesses} guesses.`);
+                }
+
+                gameOver = true;
+                setTimeout(askToPlayAgain, 100);
+
+                return;
             } else if (guess < targetNumber) {
                 setMessage("Try a higher number.");
             } else {
                 setMessage("Try a lower number.");
+            }
+        }
+
+        function resetGame() {
+            targetNumber = Math.floor(Math.random() * 100) + 1;
+            numberOfGuesses = 0;
+            gameOver = false;
+            document.getElementById("guess").value = "";
+            document.getElementById("guess").disabled = false;
+            document.getElementById("guessButton").disabled = false;
+            setMessage("New game started. Guess a number between 1 and 100.");
+        }
+
+        function askToPlayAgain() {
+            const playAgain = confirm("Would you like to play again?");
+
+            if (playAgain) {
+                resetGame();
+            } else {
+                document.getElementById("guess").disabled = true;
+                document.getElementById("guessButton").disabled = true;
             }
         }
 

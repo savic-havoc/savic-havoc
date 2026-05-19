@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Time</title>
+    <link rel="icon" type="image/x-icon" href="../images/mini.jpg" />
+    <style>
+      @font-face {
+        font-family: tango;
+        src: url("../TangoBT.ttf");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      body {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+          url("../images/bg.png");
+        background-size: cover;
+        color: #231733;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        padding: 18px;
+      }
+
+      .page {
+        background-color: #fff7c7;
+        border: 3px double purple;
+        margin: 0 auto;
+        max-width: 1120px;
+        min-height: calc(100vh - 36px);
+      }
+
+      header {
+        background-color: lightblue;
+        border-bottom: 3px double purple;
+        padding: 18px;
+        text-align: center;
+      }
+
+      h1 {
+        color: purple;
+        font-family: tango, Arial, Helvetica, sans-serif;
+        font-size: clamp(42px, 8vw, 78px);
+        line-height: 1;
+        margin: 0;
+      }
+
+      .tagline {
+        color: #402073;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 8px 0 0;
+      }
+
+      nav {
+        background-color: beige;
+        border-bottom: 2px dotted purple;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      nav a,
+      .story-actions a,
+      .story-actions button {
+        background-color: lightblue;
+        border: 2px outset purple;
+        color: purple;
+        cursor: pointer;
+        display: inline-block;
+        font: bold 14px Arial, Helvetica, sans-serif;
+        padding: 8px 12px;
+        text-decoration: none;
+      }
+
+      main {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: minmax(250px, 360px) 1fr;
+        padding: 16px;
+      }
+
+      .library,
+      .viewer {
+        background-color: #f8edaa;
+        border: 2px solid purple;
+        padding: 12px;
+      }
+
+      h2 {
+        color: purple;
+        font-size: 24px;
+        margin: 0 0 12px;
+      }
+
+      .story-card {
+        background-color: beige;
+        border: 2px outset #7c4ab3;
+        margin-bottom: 12px;
+        padding: 12px;
+      }
+
+      .story-card h3 {
+        color: #32166b;
+        font-size: 19px;
+        margin: 0 0 6px;
+      }
+
+      .story-card p {
+        line-height: 1.35;
+        margin: 0 0 10px;
+      }
+
+      .story-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .story-actions button:hover,
+      .story-actions a:hover,
+      nav a:hover {
+        background-color: #d3f4ff;
+      }
+
+      .viewer-top {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      #viewerTitle {
+        color: #32166b;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .pdf-frame {
+        background-color: white;
+        border: 2px inset purple;
+        height: 680px;
+        width: 100%;
+      }
+
+      .empty-viewer {
+        align-items: center;
+        background:
+          repeating-linear-gradient(
+            45deg,
+            #ffffff,
+            #ffffff 12px,
+            #eef9ff 12px,
+            #eef9ff 24px
+          );
+        border: 2px inset purple;
+        color: #32166b;
+        display: flex;
+        font-size: 22px;
+        font-weight: bold;
+        height: 680px;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: lightblue;
+        border-top: 3px double purple;
+        color: purple;
+        font-weight: bold;
+        padding: 12px;
+        text-align: center;
+      }
+
+      @media (max-width: 820px) {
+        body {
+          padding: 8px;
+        }
+
+        main {
+          grid-template-columns: 1fr;
+        }
+
+        .pdf-frame,
+        .empty-viewer {
+          height: 540px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Story Time</h1>
+        <p class="tagline">Pick a story, read it right here, or download the PDF for later.</p>
+      </header>
+
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../bs_memes.html">BS Memes</a>
+        <a href="../grapefarm.html">GrapeFarm</a>
+        <a href="../ms_wangen.html">Meet the Wangenator!</a>
+      </nav>
+
+      <main>
+        <section class="library" aria-label="Story library">
+          <h2>Story Shelf</h2>
+
+          <article class="story-card">
+            <h3>The Ultimate HR Battle</h3>
+            <p>
+              A wild comedy-thriller where Shawn, Colin, Misty, Brenda, and HR spiral from office chaos
+              into a full-blown showdown involving power grids, data hubs, and one very dangerous digital escape.
+            </p>
+            <div class="story-actions">
+              <button type="button" data-pdf="pdfs/The%20HR%20Battle%20%28Thriller%29.pdf" data-title="The Ultimate HR Battle">View</button>
+              <a href="pdfs/The%20HR%20Battle%20%28Thriller%29.pdf" download>Download</a>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <h3>The Ultimate HR Battle: Part II - The Backup Mainframe</h3>
+            <p>
+              The sequel picks up after the fallout, with Brenda back on the network, Shawn stuck fighting
+              broken file transfers and retail madness, and Misty somehow turning the disaster into another brunch quest.
+            </p>
+            <div class="story-actions">
+              <button type="button" data-pdf="pdfs/The%20HR%20Battle%20-%20Part%20II%20%28Final%29.pdf" data-title="The Ultimate HR Battle: Part II - The Backup Mainframe">View</button>
+              <a href="pdfs/The%20HR%20Battle%20-%20Part%20II%20%28Final%29.pdf" download>Download</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="viewer" aria-label="PDF story viewer">
+          <div class="viewer-top">
+            <h2>Story Viewer</h2>
+            <span id="viewerTitle">No story selected</span>
+          </div>
+          <div id="emptyViewer" class="empty-viewer">Click View on a story to open the PDF here.</div>
+          <iframe id="pdfViewer" class="pdf-frame" title="PDF story viewer" hidden></iframe>
+        </section>
+      </main>
+
+      <footer>Story Time Library</footer>
+    </div>
+
+    <script>
+      const pdfViewer = document.getElementById("pdfViewer");
+      const emptyViewer = document.getElementById("emptyViewer");
+      const viewerTitle = document.getElementById("viewerTitle");
+      const viewButtons = document.querySelectorAll("[data-pdf]");
+
+      viewButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const pdfPath = button.getAttribute("data-pdf");
+          const title = button.getAttribute("data-title");
+
+          pdfViewer.src = pdfPath;
+          pdfViewer.hidden = false;
+          emptyViewer.hidden = true;
+          viewerTitle.textContent = title;
+        });
+      });
+    </script>
+  </body>
+</html>
