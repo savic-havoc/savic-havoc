@@ -114,8 +114,19 @@
         margin-top: 0;
         text-align: center;
       }
+      .pro-tips-content {
+        align-items: center;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr minmax(140px, 240px);
+      }
       .pro-tips li {
         margin: 6px 0;
+      }
+      .xp-gif {
+        border: 3px ridge purple;
+        display: block;
+        max-width: 100%;
       }
       footer {
         background-color: lightblue;
@@ -129,6 +140,12 @@
         }
         .hero, .course-panels {
           grid-template-columns: 1fr;
+        }
+        .pro-tips-content {
+          grid-template-columns: 1fr;
+        }
+        .xp-gif {
+          margin: auto;
         }
       }
     </style>
@@ -198,12 +215,15 @@
 
       <div class="pro-tips">
         <h2>Business Technology Pro Tips</h2>
-        <ul>
-          <li>Praise S.O.S. (Savic Operating Systems) before touching the keyboard.</li>
-          <li>Accept she's better than you.</li>
-          <li>Remember she's all knowing.</li>
-          <li>Never question her authority.</li>
-        </ul>
+        <div class="pro-tips-content">
+          <ul>
+            <li>Praise S.O.S. (Savic Operating Systems) before touching the keyboard.</li>
+            <li>Accept she's better than you.</li>
+            <li>Remember she's all knowing.</li>
+            <li>Never question her authority.</li>
+          </ul>
+          <img class="xp-gif" src="images/microsoftxpgif.gif" alt="Windows XP animation">
+        </div>
       </div>
 
       <footer>
