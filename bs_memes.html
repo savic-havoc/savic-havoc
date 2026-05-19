@@ -1,21 +1,30 @@
 <html>
   <head>
     <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>BS Memes</title>
     <link rel="icon" type="image/x-icon" href="images/mini.jpg">
     <style lang="CSS">
       body {
         background-image: url("images/retrogrape.png");
         background-size: 100%;
+        margin: 0;
+        padding: 8px;
       }
       .content {
-        max-width: 750px;
+        max-width: 860px;
         margin: auto;
         background-color: darkseagreen;
+        border: 2px solid purple;
+        color: #102810;
+        font-family: Arial, sans-serif;
       }
       .title {
+        background-color: khaki;
         color: purple;
+        margin: 0;
+        padding: 14px;
+        text-align: center;
         text-shadow: 1px 1px brown;
       }
       .site-nav {
@@ -36,6 +45,53 @@
         color: purple;
         text-decoration: none;
       }
+      .music-box {
+        background-color: beige;
+        border-bottom: 2px dotted purple;
+        padding: 14px;
+        text-align: center;
+      }
+      .music-box p {
+        color: purple;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .meme-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr 1fr;
+        padding: 14px;
+      }
+      .meme-card {
+        background-color: khaki;
+        border: 2px outset purple;
+        padding: 12px;
+        text-align: center;
+      }
+      .meme-card.featured {
+        grid-row: span 2;
+      }
+      .meme-card img {
+        border: 2px dashed purple;
+        box-sizing: border-box;
+        height: auto;
+        max-width: 100%;
+      }
+      .meme-card p {
+        margin-bottom: 0;
+      }
+      .small-sighting {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media (max-width: 700px) {
+        .site-nav, .meme-grid {
+          display: flex;
+          flex-direction: column;
+        }
+      }
     </style>
   </head>
   <body>
@@ -46,22 +102,30 @@
         <button><a href="grapefarm.html">GrapeFarm</a></button>
         <button><a href="ms_wangen.html">Wangenator</a></button>
       </div>
-      <p>Play Below For Some Tunes :)</p>
-      <br>
-      <audio controls="controls">
-        <source src="music/circuspokey.mp3" />     
-      </audio>
-      <br>
-      <img src="images/savic_angry.png" width="400" height="400">
-      <br>
-      <p>"You know, there has come a time when I just can't handle this slow drivethru! Who's working back there?? Misty D.??" -B. Savic</p>
-      <br>
-      <p>Rare sightings of a non-compressed Savic Foursquare image:</p>
-      <img src="https://fastly.4sqi.net/img/user/260x260/21EWDXYSTEGWFMTD.jpg" height="150" width="150">
-      <br>
-      <br>
-      <p>"Oh yeah. I remember that day. I was listening to <a href="https://www.youtube.com/watch?v=Wngb5Mq1SQY" target="blank">Keeper of the Stars</a> with my country hat on! Good times!"</p>
-      <img src="images/savic_hat.png" height="200" width="200">
+
+      <div class="music-box">
+        <p>Play Below For Some Tunes :)</p>
+        <audio controls="controls">
+          <source src="music/circuspokey.mp3" />
+        </audio>
+      </div>
+
+      <div class="meme-grid">
+        <div class="meme-card featured">
+          <img src="images/savic_angry.png" width="400" height="400">
+          <p>"You know, there has come a time when I just can't handle this slow drivethru! Who's working back there?? Misty D.??" -B. Savic</p>
+        </div>
+
+        <div class="meme-card small-sighting">
+          <p>Rare sightings of a non-compressed Savic Foursquare image:</p>
+          <img src="https://fastly.4sqi.net/img/user/260x260/21EWDXYSTEGWFMTD.jpg" height="150" width="150">
+        </div>
+
+        <div class="meme-card">
+          <p>"Oh yeah. I remember that day. I was listening to <a href="https://www.youtube.com/watch?v=Wngb5Mq1SQY" target="blank">Keeper of the Stars</a> with my country hat on! Good times!"</p>
+          <img src="images/savic_hat.png" height="200" width="200">
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TMS Business Technology</title>
+    <link rel="icon" type="image/x-icon" href="images/mini.jpg">
+    <style>
+      body {
+        background-image: url("images/bg.png");
+        background-size: 100%;
+        color: purple;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 8px;
+      }
+      .content {
+        background-color: khaki;
+        border: 2px solid purple;
+        margin: auto;
+        max-width: 900px;
+      }
+      .title {
+        background-color: lightblue;
+        border-bottom: 3px double purple;
+        margin: 0;
+        padding: 14px;
+        text-align: center;
+      }
+      .site-nav {
+        background-color: lightblue;
+        border-bottom: 3px double purple;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        padding: 10px;
+      }
+      .site-nav button {
+        background-color: beige;
+        border: 2px outset purple;
+        font-weight: bold;
+      }
+      .site-nav a {
+        color: purple;
+        text-decoration: none;
+      }
+      .hero {
+        align-items: center;
+        background-color: beige;
+        border-bottom: 2px dotted purple;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr 1fr;
+        padding: 16px;
+      }
+      .hero img {
+        max-width: 100%;
+      }
+      .portrait-card {
+        background-color: lightblue;
+        border: 3px ridge purple;
+        padding: 12px;
+        text-align: center;
+      }
+      .portrait-card img {
+        border: 4px double purple;
+        box-shadow: 6px 6px 0 #355;
+        display: block;
+        margin: 0 auto 12px;
+        max-width: 100%;
+      }
+      .course-panels {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr 1fr;
+        padding: 14px;
+      }
+      .panel {
+        background-color: lightblue;
+        border: 2px outset purple;
+        padding: 12px;
+      }
+      .panel h2 {
+        color: navy;
+        margin-top: 0;
+        text-align: center;
+      }
+      .badge-row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        padding: 0 14px 14px;
+      }
+      .badge {
+        align-items: center;
+        background-color: beige;
+        border: 2px dashed purple;
+        color: navy;
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+        min-height: 40px;
+        padding: 10px;
+        text-align: center;
+      }
+      .pro-tips {
+        background-color: beige;
+        border: 3px double purple;
+        margin: 0 14px 14px;
+        padding: 12px;
+      }
+      .pro-tips h2 {
+        color: navy;
+        margin-top: 0;
+        text-align: center;
+      }
+      .pro-tips li {
+        margin: 6px 0;
+      }
+      footer {
+        background-color: lightblue;
+        border-top: 3px double purple;
+        padding: 10px;
+        text-align: center;
+      }
+      @media (max-width: 700px) {
+        .site-nav, .badge-row {
+          flex-direction: column;
+        }
+        .hero, .course-panels {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1 class="title">TMS Business Technology Department</h1>
+      <div class="site-nav">
+        <button><a href="index.html">Home</a></button>
+        <button><a href="bs_memes.html">BS Memes</a></button>
+        <button><a href="grapefarm.html">GrapeFarm</a></button>
+        <button><a href="ms_wangen.html">Meet the Wangenator!</a></button>
+      </div>
+
+      <div class="hero">
+        <div>
+          <img src="images/2004business.gif" alt="2004 Templeton Business">
+          <h2>When Wangen Ruled the Keyboard Lab</h2>
+          <p>
+            Before Wangen became the digital headquarters of high finance at TMS,
+            she did extensive research on Mountain Dew, computers and business, and thereon 
+            after taught the students of TMS how to do the same.
+          </p>
+        </div>
+
+        <div class="portrait-card">
+          <img src="images/Wangen.png" alt="Brenda Savic/Wangen">
+          <b>Meet The Department</b>
+          <p>Hmp! That's all folks! It's just me! The Wangenator a.k.a the grapest teacher of all time!</p>
+        </div>
+      </div>
+
+      <div class="course-panels">
+        <div class="panel">
+          <h2>The Course</h2>
+          <p>
+            TMS Business Technology was the place where students learned the
+            sacred arts of typing, saving files correctly, reading directions,
+            and not making the teacher ask why the printer was doing that.
+          </p>
+          <ul>
+            <li>Computer basics with old-school authority</li>
+            <li>Business documents, tables, and classroom projects</li>
+            <li>Keyboard confidence for future corporate legends</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>The Wangen Effect</h2>
+          <p>
+            Her old schedule page lists computer intro, computer usage, and
+            career pathways classes, which makes this page an honorary archive
+            of the Wangen Business Technology age.
+          </p>
+          <p>
+            Students entered as ordinary citizens and left knowing at least
+            one more thing about computers than they did yesterday. Sometimes.
+          </p>
+        </div>
+      </div>
+
+      <div class="badge-row">
+        <div class="badge">SAVE EARLY<br>SAVE OFTEN</div>
+        <div class="badge">READ THE DIRECTIONS</div>
+        <div class="badge">BUSINESS CASUAL<br>BUT MAKE IT WINDOWS 98</div>
+      </div>
+
+      <div class="pro-tips">
+        <h2>Business Technology Pro Tips</h2>
+        <ul>
+          <li>Praise S.O.S. (Savic Operating Systems) before touching the keyboard.</li>
+          <li>Accept she's better than you.</li>
+          <li>Remember she's all knowing.</li>
+          <li>Never question her authority.</li>
+        </ul>
+      </div>
+
+      <footer>
+        <a href="ms_wangen.html">View Ms. Wangen's schedule archive</a>
+      </footer>
+    </div>
+  </body>
+</html>
